@@ -1,4 +1,4 @@
-file_path = "C:/Users/BT_4N2_18/PycharmProjects/pythonProject/input2.txt"
+file_path = "C:/Users/BT_4N2_18/PycharmProjects/pythonProject/input.txt"
 with open(file_path, "r") as f:
     content = f.read()
 
@@ -18,21 +18,24 @@ for i in range(len(content)):
                 if content[i + 3] == "(":
                     num1 = ""
                     for j in range(3):
-                        b = j + 3
+                        b = j + 4 + i
                         if content[b] in num:
                             num1 += content[b]
+                        else:
+                            break
                     if content[i + 4 + len(num1)] == ",":
                         num2 = ""
                         for j in range(3):
-                            c = j + 4 + len(num1)
+                            c = j + 5 + len(num1) + i
                             if content[c] in num:
                                 num2 += content[c]
+                            else:
+                                break
                         if content[i + 5 + len(num1) + len(num2) ] == ")":
-                            print("blah")
                             sum += int(num1) * int(num2)
 
 print(sum)
-print(index)
+# print(index)
     # maybe mr das was right but I aint backin down, imma make this work!
 
 # for i in range(len(content)):
@@ -73,4 +76,6 @@ print(index)
 #                         if content[i + 5 + len(num1) + len(num2)] == ")":
 #                             sum += int(num1) * int(num2)
 #
-# print(sum)
+# print(sum)\
+
+
